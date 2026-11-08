@@ -1,6 +1,7 @@
 """Hoops Manager — FBLA entry point."""
 from __future__ import annotations
 
+import asyncio
 import sys
 import traceback
 from datetime import datetime
@@ -13,9 +14,9 @@ if str(ROOT) not in sys.path:
 from screens.manager import GameApp
 
 
-def main() -> None:
+async def main() -> None:
     try:
-        GameApp().run()
+        await GameApp().run()
     except Exception as exc:
         report = (
             f"\n[{datetime.now().isoformat(timespec='seconds')}] "
@@ -37,4 +38,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())

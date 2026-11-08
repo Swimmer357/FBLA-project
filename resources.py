@@ -7,8 +7,11 @@ from pathlib import Path
 
 
 def resource_path(relative: str) -> str:
+    # Web servers and pygbag require URL-style separators. Pygame also accepts
+    # forward slashes on desktop platforms, including Windows.
+    relative = relative.replace("\\", "/")
     base = getattr(sys, "_MEIPASS", os.path.abspath(os.path.dirname(__file__)))
-    return os.path.join(base, relative)
+    return (Path(base) / Path(relative)).as_posix()
 
 
 def data_path(filename: str = "") -> Path:

@@ -76,9 +76,9 @@ FOCUS_RING = 2
 ROSTER_W = 340
 ROSTER_H = 400
 
-SOUND_CLICK = "assets/sounds/click.wav"
-SOUND_BUZZER = "assets/sounds/buzzer.wav"
-SOUND_CHIME = "assets/sounds/chime.wav"
+SOUND_CLICK = "assets/sounds/click.ogg"
+SOUND_BUZZER = "assets/sounds/buzzer.ogg"
+SOUND_CHIME = "assets/sounds/chime.ogg"
 
 _DEFAULTS: dict[str, tuple[int, int, int] | int | str] = {}
 

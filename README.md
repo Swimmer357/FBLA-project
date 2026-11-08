@@ -13,6 +13,18 @@ FBLA Computer Game & Simulation Programming — single-season high school basket
 python main.py
 ```
 
+## Run in a browser (pygbag)
+
+Install the optional web packager, then serve the project:
+
+```bash
+python -m pip install pygbag
+python -m pygbag .
+```
+
+Open the local URL printed by pygbag. The desktop dependencies in
+`requirements.txt` do not require pygbag.
+
 ## Tests
 
 ```bash
@@ -24,6 +36,19 @@ pytest tests/ -q
 ```bash
 python tools/balance.py
 ```
+
+## Convert sound assets to OGG
+
+The game loads `.ogg` effects for smaller web downloads. To regenerate them
+from WAV sources:
+
+```bash
+python3 -m pip install soundfile
+python3 tools/convert_audio.py
+```
+
+The converter keeps the WAV originals by default. Add `--delete-wav` only
+after verifying both desktop and web audio.
 
 ## Package (macOS example)
 

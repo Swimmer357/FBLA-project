@@ -1,6 +1,8 @@
 """Screen stack, main loop, audio, accessibility."""
 from __future__ import annotations
 
+import asyncio
+
 import pygame
 
 import theme
@@ -133,30 +135,33 @@ class GameApp:
             variant="default",
         )
 
-    def run(self) -> None:
-        while self.running:
-            dt = self.clock.tick(60) / 1000.0
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    self.running = False
-                elif event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_m:
-                        self.muted = not self.muted
-                    elif event.key == pygame.K_r:
-                        self._toggle_roster()
-                    else:
+    async def run(self) -> None:
+        try:
+            while self.running:
+                dt = self.clock.tick(60) / 1000.0
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        self.running = False
+                    elif event.type == pygame.KEYDOWN:
+                        if event.key == pygame.K_m:
+                            self.muted = not self.muted
+                        elif event.key == pygame.K_r:
+                            self._toggle_roster()
+                        else:
+                            self.stack[-1].handle_event(self, event)
+                    elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                        if not self._roster_is_open() and ROSTER_BUTTON_RECT.collidepoint(event.pos):
+                            self._toggle_roster()
+                        else:
+                            self.stack[-1].handle_event(self, event)
+                    elif event.type == pygame.MOUSEWHEEL:
                         self.stack[-1].handle_event(self, event)
-                elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-                    if not self._roster_is_open() and ROSTER_BUTTON_RECT.collidepoint(event.pos):
-                        self._toggle_roster()
-                    else:
-                        self.stack[-1].handle_event(self, event)
-                elif event.type == pygame.MOUSEWHEEL:
-                    self.stack[-1].handle_event(self, event)
-            self.stack[-1].update(self, dt)
-            self.draw_frame()
-            pygame.display.flip()
-        pygame.quit()
+                self.stack[-1].update(self, dt)
+                self.draw_frame()
+                pygame.display.flip()
+                await asyncio.sleep(0)
+        finally:
+            pygame.quit()
 
     def draw_frame(self) -> None:
         self.screen.fill(theme.BG_DEEP)

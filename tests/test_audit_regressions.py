@@ -1,6 +1,7 @@
 """Regression coverage for the engine/data audit and scenario diversity."""
 from __future__ import annotations
 
+import asyncio
 import copy
 import json
 
@@ -243,14 +244,14 @@ def test_top_level_crash_log_preserves_traceback(tmp_path, monkeypatch):
     import main as entrypoint
 
     class BrokenApp:
-        def run(self):
+        async def run(self):
             raise RuntimeError("render transition failed")
 
     monkeypatch.setattr(entrypoint, "ROOT", tmp_path)
     monkeypatch.setattr(entrypoint, "GameApp", BrokenApp)
 
     with pytest.raises(RuntimeError, match="render transition failed"):
-        entrypoint.main()
+        asyncio.run(entrypoint.main())
 
     crash = (tmp_path / "crash.log").read_text(encoding="utf-8")
     assert "RuntimeError: render transition failed" in crash
