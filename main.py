@@ -1,3 +1,8 @@
+# /// script
+# dependencies = [
+#   "pygame-ce",
+# ]
+# ///
 """Hoops Manager — FBLA entry point."""
 from __future__ import annotations
 
