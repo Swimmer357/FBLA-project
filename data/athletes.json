@@ -1,0 +1,92 @@
+{
+  "athletes": [
+    {
+      "name": "Marcus Reed",
+      "pos": "G",
+      "shooting": 68,
+      "defense": 52,
+      "stamina": 64,
+      "potential": 2,
+      "leadership": 70,
+      "morale": 60,
+      "fatigue": 10
+    },
+    {
+      "name": "Devon Hayes",
+      "pos": "G",
+      "shooting": 60,
+      "defense": 58,
+      "stamina": 60,
+      "potential": 3,
+      "leadership": 55,
+      "morale": 60,
+      "fatigue": 10
+    },
+    {
+      "name": "Tyrell Brooks",
+      "pos": "F",
+      "shooting": 56,
+      "defense": 64,
+      "stamina": 58,
+      "potential": 3,
+      "leadership": 50,
+      "morale": 60,
+      "fatigue": 10
+    },
+    {
+      "name": "Jalen Cruz",
+      "pos": "F",
+      "shooting": 62,
+      "defense": 55,
+      "stamina": 56,
+      "potential": 4,
+      "leadership": 45,
+      "morale": 60,
+      "fatigue": 10
+    },
+    {
+      "name": "Omar Patel",
+      "pos": "C",
+      "shooting": 48,
+      "defense": 68,
+      "stamina": 62,
+      "potential": 2,
+      "leadership": 65,
+      "morale": 60,
+      "fatigue": 10
+    },
+    {
+      "name": "Eli Washington",
+      "pos": "G",
+      "shooting": 54,
+      "defense": 50,
+      "stamina": 66,
+      "potential": 4,
+      "leadership": 40,
+      "morale": 60,
+      "fatigue": 10
+    },
+    {
+      "name": "Noah Kim",
+      "pos": "F",
+      "shooting": 50,
+      "defense": 54,
+      "stamina": 52,
+      "potential": 5,
+      "leadership": 35,
+      "morale": 60,
+      "fatigue": 10
+    },
+    {
+      "name": "Cam Foster",
+      "pos": "C",
+      "shooting": 44,
+      "defense": 56,
+      "stamina": 50,
+      "potential": 3,
+      "leadership": 60,
+      "morale": 60,
+      "fatigue": 10
+    }
+  ]
+}

@@ -1,0 +1,226 @@
+{
+  "events": [
+    {
+      "id": "transfer_available",
+      "title": "Transfer Available",
+      "description": "A local transfer wants to join your program this week.",
+      "trigger": "transfer_window",
+      "priority": false,
+      "responses": [
+        {
+          "id": "recruit_now",
+          "label": "Recruit now (3 tokens)",
+          "token_cost": 3,
+          "effects": [{"type": "draw_recruit_single"}, {"type": "cohesion", "delta": -4}]
+        },
+        {
+          "id": "pass",
+          "label": "Pass (free)",
+          "token_cost": 0,
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "injury",
+      "title": "Injury Report",
+      "description": "{athlete} picked up an injury in practice.",
+      "trigger": "injury_roll",
+      "priority": false,
+      "responses": [
+        {
+          "id": "therapy",
+          "label": "Physical therapy (3 tokens)",
+          "token_cost": 3,
+          "effects": [{"type": "games_out", "games": 1}]
+        },
+        {
+          "id": "rest",
+          "label": "Rest him (free)",
+          "token_cost": 0,
+          "effects": [{"type": "games_out", "games": 2}]
+        }
+      ]
+    },
+    {
+      "id": "losing_streak_slump",
+      "title": "Losing Streak Slump",
+      "description": "Morale is shaky after two straight losses. Captain {captain} calls a meeting.",
+      "trigger": "two_losses",
+      "priority": true,
+      "responses": [
+        {
+          "id": "players_meeting",
+          "label": "Players-only meeting (free)",
+          "token_cost": 0,
+          "effects": [{"type": "slump_meeting"}]
+        },
+        {
+          "id": "team_dinner",
+          "label": "Team dinner (2 tokens)",
+          "token_cost": 2,
+          "effects": [{"type": "morale_all", "delta": 8}]
+        }
+      ]
+    },
+    {
+      "id": "equipment_failure",
+      "title": "Equipment Failure",
+      "description": "The practice gear failed before a key drill.",
+      "trigger": "random",
+      "priority": false,
+      "responses": [
+        {
+          "id": "repair",
+          "label": "Emergency repair (3 tokens)",
+          "token_cost": 3,
+          "effects": []
+        },
+        {
+          "id": "make_do",
+          "label": "Make do (free)",
+          "token_cost": 0,
+          "effects": [{"type": "preparation", "delta": -10}]
+        }
+      ]
+    },
+    {
+      "id": "back_to_back",
+      "title": "Back-to-Back Games",
+      "description": "Starters are worn down (avg fatigue {avg_fatigue}).",
+      "trigger": "starter_fatigue_high",
+      "priority": false,
+      "responses": [
+        {
+          "id": "rest_day",
+          "label": "Mandatory rest day (2 tokens)",
+          "token_cost": 2,
+          "effects": [{"type": "skip_post_game_fatigue"}]
+        },
+        {
+          "id": "push",
+          "label": "Push through (free)",
+          "token_cost": 0,
+          "effects": [{"type": "fatigue_all", "delta": 8}]
+        }
+      ]
+    },
+    {
+      "id": "grades_warning",
+      "title": "Grades Warning",
+      "description": "{athlete} is in academic trouble and may miss eligibility.",
+      "trigger": "grades_starter",
+      "priority": false,
+      "responses": [
+        {
+          "id": "tutoring",
+          "label": "Tutoring (2 tokens)",
+          "token_cost": 2,
+          "effects": []
+        },
+        {
+          "id": "bench",
+          "label": "Bench one game (free)",
+          "token_cost": 0,
+          "effects": [{"type": "games_out", "games": 1}, {"type": "morale_target", "delta": -6}]
+        }
+      ]
+    },
+    {
+      "id": "rising_star",
+      "title": "Rising Star",
+      "description": "{athlete} wants a bigger role on the team.",
+      "trigger": "rising_star",
+      "priority": false,
+      "responses": [
+        {
+          "id": "mentor",
+          "label": "Mentor him (2 tokens)",
+          "token_cost": 2,
+          "effects": [{"type": "mentor_best_skill", "delta": 5}]
+        },
+        {
+          "id": "wait",
+          "label": "Tell him to wait (free)",
+          "token_cost": 0,
+          "effects": [{"type": "morale_target", "delta": -8}]
+        }
+      ]
+    },
+    {
+      "id": "rival_adjusts",
+      "title": "Rival Scouting Report",
+      "description": "Your next opponent is scouting your defense.",
+      "trigger": "rival_scout",
+      "priority": false,
+      "responses": [
+        {
+          "id": "film",
+          "label": "Film study (2 tokens)",
+          "token_cost": 2,
+          "effects": [{"type": "preparation", "delta": 8}]
+        },
+        {
+          "id": "ignore",
+          "label": "Ignore it (free)",
+          "token_cost": 0,
+          "effects": [{"type": "rival_bonus", "delta": 3}]
+        }
+      ]
+    },
+    {
+      "id": "full_court_press",
+      "title": "Full-Court Press Warning",
+      "description": "Film shows the next opponent plans to press from the opening tip.",
+      "trigger": "random",
+      "priority": false,
+      "responses": [
+        {
+          "id": "press_break_drills",
+          "label": "Run press-break drills (2 tokens)",
+          "token_cost": 2,
+          "effects": [
+            {"type": "preparation", "delta": 6},
+            {"type": "fatigue_all", "delta": 3}
+          ]
+        },
+        {
+          "id": "trust_guards",
+          "label": "Trust the guards (free)",
+          "token_cost": 0,
+          "effects": [
+            {"type": "cohesion", "delta": 3},
+            {"type": "preparation", "delta": -3}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "community_showcase",
+      "title": "Community Showcase",
+      "description": "A youth basketball group asks the team to host a weeknight clinic.",
+      "trigger": "random",
+      "priority": false,
+      "responses": [
+        {
+          "id": "host_clinic",
+          "label": "Host the clinic (free)",
+          "token_cost": 0,
+          "effects": [
+            {"type": "morale_all", "delta": 4},
+            {"type": "fatigue_all", "delta": 2}
+          ]
+        },
+        {
+          "id": "protect_practice",
+          "label": "Protect practice time (free)",
+          "token_cost": 0,
+          "effects": [
+            {"type": "preparation", "delta": 4},
+            {"type": "morale_all", "delta": -2}
+          ]
+        }
+      ]
+    }
+  ]
+}

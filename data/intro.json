@@ -1,0 +1,41 @@
+{
+  "opening": "{school_name}'s gym is quiet. A new season is about to begin.",
+  "title": "HOOPS MANAGER: ROAD TO STATE",
+  "scroll_speed": 42,
+  "sections": [
+    {
+      "heading": "YOU ARE THE HEAD COACH",
+      "text": "Guide the entire basketball program through one season. You will not control individual plays. Your decisions before each game determine whether the team is prepared to win."
+    },
+    {
+      "heading": "THE SEASON",
+      "text": "The regular season lasts seven games. Win at least four to qualify for the playoffs, then survive the semifinal and state final to become champion."
+    },
+    {
+      "heading": "PLAN EACH WEEK",
+      "text": "Every week gives you a limited token budget and three moves. Spend them on focused training, team practice, recovery, team culture, recruiting, or banking emergency tokens. A balanced plan develops skill without exhausting the roster."
+    },
+    {
+      "heading": "KNOW YOUR TEAM",
+      "text": "Shooting, defense, stamina, morale, fatigue, preparation, cohesion, and bench depth all influence the result. Choose a captain with strong leadership. The five best available athletes start automatically."
+    },
+    {
+      "heading": "EXPECT THE UNEXPECTED",
+      "text": "Injuries, grades, transfer interest, and morale problems may interrupt the week. Every event offers choices. Paid responses can use weekly tokens or the reserve you built earlier."
+    },
+    {
+      "heading": "LEARN FROM EVERY GAME",
+      "text": "After the final score, read Why This Happened. It identifies the three largest factors, athlete highlights, and a coaching tip. Use that evidence to improve next week's plan."
+    },
+    {
+      "heading": "CONTROLS",
+      "text": "Use the mouse or Tab and arrow keys to move between buttons. Press Enter to select, Escape to go back, M to mute, and F on the weekly plan to fast-forward with confirmation. Display and accessibility options are available on the dashboard."
+    },
+    {
+      "heading": "FIRST-SEASON ADVICE",
+      "text": "Choose Varsity difficulty. Watch fatigue, practice before difficult opponents, recover when the roster is tired, and save reserve tokens for emergencies. The full guide remains available under How to Play."
+    }
+  ],
+  "closing": "THE PROGRAM IS YOURS. MAKE EVERY WEEK COUNT.",
+  "skip_label": "Skip to Dashboard"
+}

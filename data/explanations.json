@@ -1,0 +1,48 @@
+{
+  "factors": {
+    "talent_gap": {
+      "positive": "Your starters were stronger on paper: +{value} points (rating {mean_r} against {opp}).",
+      "negative": "The opponent was stronger on paper: {value} points (rating {mean_r} against {opp})."
+    },
+    "fatigue": {
+      "positive": "Your starters were rested and it helped by {value} points.",
+      "negative": "Fatigue cost you {value} points: your starters averaged {avg_fatigue} Fatigue."
+    },
+    "morale": {
+      "positive": "Good morale added {value} points.",
+      "negative": "Low morale cost you {value} points."
+    },
+    "preparation": {
+      "positive": "Preparation added {value} points ({prep} of 20).",
+      "negative": "Preparation added {value} points ({prep} of 20)."
+    },
+    "cohesion": {
+      "positive": "Team chemistry added {value} points (Cohesion {cohesion}).",
+      "negative": "Weak chemistry cost you {value} points (Cohesion {cohesion})."
+    },
+    "depth": {
+      "positive": "Depth added {value} points.",
+      "negative": "Only {available} athletes were available, costing {value} points."
+    },
+    "luck": {
+      "positive": "Luck added {value} points: the breaks went your way.",
+      "negative": "Luck cost you {value} points: the breaks went the other way."
+    }
+  },
+  "close_game": "This game was extremely close and came down to small margins and luck.",
+  "coach_tips": {
+    "fatigue": "Fatigue was your biggest controllable loss. Recovery and Wellness lowers Fatigue for the whole roster.",
+    "morale": "Morale is dragging the team down. Team-Building lifts every athlete.",
+    "cohesion": "Chemistry is weak. Team-Building and Team Practice both raise Cohesion.",
+    "preparation": "You went in unprepared. Team Practice builds Preparation, which halves after every game.",
+    "depth": "You are short on players. Recruit someone, or protect injured athletes.",
+    "talent_gap": "The opponent has more talent. Focused Training grows your best prospects."
+  },
+  "endings": {
+    "state_champion": "You won the State Final and brought home the championship.",
+    "finalist": "You reached the State Final but fell just short.",
+    "playoff_exit": "Your season ended in the playoff semifinal.",
+    "missed_playoffs": "You won {wins} of {games} games, one short of the {needed} needed.",
+    "program_collapse": "Average Morale was {morale} and average Fatigue was {fatigue} for two weeks in a row, and the program collapsed."
+  }
+}

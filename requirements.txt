@@ -1,0 +1,4 @@
+# Python 3.12.8 (team standard — shown on About screen at runtime)
+pygame==2.6.1; python_version < "3.14"
+pygame-ce>=2.5.8; python_version >= "3.14"
+pytest==8.3.4

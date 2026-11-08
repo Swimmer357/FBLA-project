@@ -1,0 +1,20 @@
+{
+  "what": "Hoops Manager is an FBLA Computer Game & Simulation Programming entry. You run a high school basketball program for one season — recruiting, training, culture, and weekly choices — not individual plays.",
+  "rationale": "The player manages the program rather than the plays, because the topic is about decisions on and off the court.",
+  "built": "Python and pygame render a fixed 1280×720 window. Game logic lives in a pygame-free engine layer; screens handle input and drawing only. Balance numbers and all player-facing text live in JSON data files.",
+  "art": "Every graphic is drawn in code from theme.py: court lines, panels, buttons, bars, scoreboard, and athlete cards. One bundled Inter font (SIL Open Font License) and three CC0-style sound effects (click, buzzer, chime).",
+  "accessibility": "Preseason briefing on first launch; program dashboard with full How to Play guide; Display and Accessibility (high contrast, larger text, Inter font) via S on the dashboard. Body text is 24px minimum at default scale. Results always show triangles and +/− signs, not color alone. Keyboard, mouse, mute, and skippable scoreboard.",
+  "credits_font": "Inter — SIL Open Font License 1.1",
+  "credits_sound": "Short effects generated for this project (CC0-style, no attribution required).",
+  "testing": "pytest unit tests including: seven factors sum to margin on 1,000 random games; action validation; lineup rules; overtime; seeded replay; forced endings; data validation.",
+  "journey": "Start → Prepare → Play → Learn → Finish",
+  "journey_steps": [
+    "Start: Hoops Manager tutorial, dashboard, and difficulty",
+    "Prepare: captain choice and weekly planning",
+    "Play: match scoreboard",
+    "Learn: explained results panel",
+    "Finish: season report and ending"
+  ],
+  "improvements": "Future work could add save games, animated court possessions, and expanded event art — cut from scope to ship a complete, explainable season in one sitting.",
+  "balance_note": "Run tools/balance.py before the freeze and paste the printed table here for judges."
+}

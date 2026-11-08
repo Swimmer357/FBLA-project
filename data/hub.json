@@ -1,0 +1,19 @@
+{
+  "dashboard_title": "Hoops Manager",
+  "tagline": "Lead your school to the state championship",
+  "no_season_stats": "No completed season yet this session",
+  "default_objective": "Win 4 of 7 regular-season games, then win the playoff semifinal and state final.",
+  "last_season_prefix": "Last season",
+  "path_heading": "Your path",
+  "lineup_heading": "Projected starting five",
+  "actions_heading": "Coach's menu",
+  "buttons": {
+    "new_season": "Start New Season",
+    "how_to_play": "How to Play",
+    "about": "About This Game",
+    "briefing": "Briefing",
+    "exit": "Exit",
+    "help_short": "Rules"
+  },
+  "hints": "? opens rules · S settings · Esc exit · Tab/Enter navigate · M mute"
+}

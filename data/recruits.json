@@ -1,0 +1,64 @@
+{
+  "recruits": [
+    {
+      "name": "Andre Whitfield",
+      "pos": "G",
+      "shooting": 70,
+      "defense": 42,
+      "stamina": 60,
+      "potential": 3,
+      "leadership": 40,
+      "blurb": "Elite shooter, limited defense"
+    },
+    {
+      "name": "Luis Moreno",
+      "pos": "F",
+      "shooting": 52,
+      "defense": 66,
+      "stamina": 58,
+      "potential": 4,
+      "leadership": 50,
+      "blurb": "Solid defender with room to grow"
+    },
+    {
+      "name": "Brandon Tate",
+      "pos": "C",
+      "shooting": 46,
+      "defense": 72,
+      "stamina": 54,
+      "potential": 2,
+      "leadership": 55,
+      "blurb": "Rim protector, limited scoring"
+    },
+    {
+      "name": "Kevin Osei",
+      "pos": "G",
+      "shooting": 64,
+      "defense": 60,
+      "stamina": 48,
+      "potential": 3,
+      "leadership": 35,
+      "blurb": "Best all-round recruit, tires quickly"
+    },
+    {
+      "name": "Darius Cole",
+      "pos": "F",
+      "shooting": 66,
+      "defense": 46,
+      "stamina": 70,
+      "potential": 5,
+      "leadership": 30,
+      "blurb": "High potential and endurance, weak defense"
+    },
+    {
+      "name": "Mateo Silva",
+      "pos": "C",
+      "shooting": 58,
+      "defense": 64,
+      "stamina": 52,
+      "potential": 2,
+      "leadership": 70,
+      "blurb": "Natural leader, limited upside"
+    }
+  ]
+}

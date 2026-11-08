@@ -1,0 +1,63 @@
+{
+  "title": "How to Play — Full Guide",
+  "intro": "You are the coach of a high school basketball program for one season. You do not control plays on the court. Each week you spend tokens and moves on training, culture, and recruiting, then watch a game play out and read exactly why you won or lost.",
+  "points": [
+    {
+      "heading": "Your goal",
+      "text": "Win at least 4 of 7 regular-season games to make the playoffs, then win the semifinal and the state final. Endings include State Champion, Finalist, Playoff Exit, Missed Playoffs, and Program Collapse."
+    },
+    {
+      "heading": "Season calendar",
+      "text": "Week 0 is preseason planning (no game). Weeks 1–7 are regular-season games. Weeks 8–9 are playoffs if you qualify: Semifinal, then State Final. You always finish the season even if you are eliminated on paper."
+    },
+    {
+      "heading": "Tokens (weekly budget)",
+      "text": "Each week you receive {weekly_tokens} tokens on Varsity difficulty (Rookie gets 9, Championship gets 7). Tokens pay for actions. Unspent tokens disappear at the end of the week. You may Bank 1–3 tokens into an emergency reserve (max {max_reserve}) using one move; reserve tokens can pay for event responses but not for weekly actions."
+    },
+    {
+      "heading": "Moves (action limit)",
+      "text": "You may take at most {moves_per_week} actions per week no matter how many tokens you have. Both tokens and moves must be spent wisely. A balanced week is Focused Training (3) + Team Practice (3) + Recovery (2) = 8 tokens and 3 moves."
+    },
+    {
+      "heading": "Weekly actions — Focused Training (3 tokens)",
+      "text": "Pick one athlete and one skill: Shooting, Defense, or Stamina. Gain 4 + Potential (5–9 points). If the athlete's Fatigue is 80+, the gain is halved. Fatigue rises by 10. Injured or benched athletes can still train."
+    },
+    {
+      "heading": "Weekly actions — Team Practice (3 tokens)",
+      "text": "Preparation +10 (caps at 20), Cohesion +2, and Fatigue +4 for the top 8 athletes by starter score. Preparation adds up to +8 margin points but halves after every game."
+    },
+    {
+      "heading": "Weekly actions — Recovery and Wellness (2 tokens)",
+      "text": "All athletes: Fatigue −15 (min 0) and Morale +2 (max 100). You may take this twice in one week if you have tokens and moves left."
+    },
+    {
+      "heading": "Weekly actions — Team-Building (2 tokens)",
+      "text": "Cohesion +6 and all Morale +3. If your captain's Leadership is 60+, Cohesion gets an extra +2."
+    },
+    {
+      "heading": "Weekly actions — Scout and Recruit (5 tokens)",
+      "text": "See two recruits with full stats; sign one (Cohesion −5) or decline both (tokens are not refunded). Disabled when the roster has 10 athletes."
+    },
+    {
+      "heading": "Weekly actions — Bank Tokens (1 move)",
+      "text": "Move 1, 2, or 3 tokens from this week's budget into the reserve (max {max_reserve}). Disabled when the reserve is full."
+    },
+    {
+      "heading": "Athletes and lineup",
+      "text": "Shooting, Defense, and Stamina matter on court. Fatigue and Morale help or hurt starter scores. The five available athletes with the best starter scores start automatically—you manage the program, not the plays."
+    },
+    {
+      "heading": "Events",
+      "text": "Up to one random event per week (before planning). Each event has a free response and a paid response. Examples: injuries, grades warnings, transfer offers, and morale slumps. Paid options can use weekly tokens or reserve tokens."
+    },
+    {
+      "heading": "After each game",
+      "text": "The Results screen shows the final score and Why this happened—the three largest factors in plain English, a Coach's Tip, and athlete highlights. Use this panel to plan the next week."
+    },
+    {
+      "heading": "Controls",
+      "text": "Arrow keys or Tab to move focus; Enter to select; Esc to go back; M to mute; F to fast-forward the rest of the season from the planning screen (with confirmation). Mouse click works on all buttons."
+    }
+  ],
+  "controls": "Esc returns to the previous screen. Scroll this guide with Up/Down arrow keys."
+}

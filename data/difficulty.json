@@ -1,0 +1,23 @@
+{
+  "Rookie": {
+    "weekly_tokens": 9,
+    "rating_offset": -4,
+    "event_chance": 0.3,
+    "label": "Rookie",
+    "recommended": false
+  },
+  "Varsity": {
+    "weekly_tokens": 8,
+    "rating_offset": 7,
+    "event_chance": 0.4,
+    "label": "Varsity",
+    "recommended": true
+  },
+  "Championship": {
+    "weekly_tokens": 7,
+    "rating_offset": 4,
+    "event_chance": 0.5,
+    "label": "Championship",
+    "recommended": false
+  }
+}
