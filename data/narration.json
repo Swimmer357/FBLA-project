@@ -1,0 +1,510 @@
+{
+  "why": {
+    "talent_gap": {
+      "helped": {
+        "small": [
+          "Your starters held a slim {value}-point talent edge.",
+          "A small ratings edge added {value} points.",
+          "Talent tipped slightly your way: +{value}.",
+          "{athlete} anchored a lineup rated {value} points higher."
+        ],
+        "medium": [
+          "A clear talent edge was worth {value} points.",
+          "Stronger starters, led by {athlete}, added {value}.",
+          "Ratings favored your lineup by {value} points.",
+          "On paper, your starters outclassed theirs by {value}."
+        ],
+        "large": [
+          "A big talent gap carried this game: +{value}.",
+          "Your starters out-rated them by {value} points.",
+          "{athlete} headlined a far stronger lineup: +{value}.",
+          "Raw talent alone delivered {value} points."
+        ]
+      },
+      "hurt": {
+        "small": [
+          "The opponent held a slight {value}-point talent edge.",
+          "Ratings tilted their way by {value} points.",
+          "A narrow talent deficit cost {value} points.",
+          "Their starters rated {value} points higher on paper."
+        ],
+        "medium": [
+          "Their stronger lineup cost {value} points.",
+          "A real talent gap took away {value} points.",
+          "On paper, they were {value} points better.",
+          "Even with {athlete}, the lineup trailed by {value}."
+        ],
+        "large": [
+          "A wide talent gap cost {value} points.",
+          "Their starters out-rated yours by {value} points.",
+          "Outmatched on paper: the ratings gap was {value}.",
+          "Talent decided a lot here: −{value} points."
+        ]
+      }
+    },
+    "fatigue": {
+      "helped": {
+        "small": [
+          "Fresh legs added {value} points.",
+          "Rested starters gave a small {value}-point lift.",
+          "Low fatigue nudged the margin {value} points.",
+          "Energy was a minor plus: +{value}."
+        ],
+        "medium": [
+          "Well-rested starters added {value} points.",
+          "Fresh legs were worth {value} points.",
+          "Recovery work paid off: +{value}.",
+          "Energy across the lineup added {value}."
+        ],
+        "large": [
+          "Fully rested starters delivered {value} points.",
+          "Freshness was a major edge: +{value}.",
+          "Rest turned into {value} points.",
+          "Energy carried {value} points of margin."
+        ]
+      },
+      "hurt": {
+        "small": [
+          "Mild fatigue trimmed {value} points.",
+          "Tired legs cost a small {value} points.",
+          "{athlete} and the starters lost {value} to fatigue.",
+          "Fatigue shaved {value} points off the margin."
+        ],
+        "medium": [
+          "Fatigue cost {value} points; {athlete} was most tired.",
+          "Worn-down starters gave back {value} points.",
+          "Heavy legs took {value} points away.",
+          "Built-up fatigue drained {value} points."
+        ],
+        "large": [
+          "Exhaustion cost {value} points, led by {athlete}.",
+          "Tired starters bled {value} points.",
+          "Fatigue was a major drain: −{value}.",
+          "Running on empty cost {value} points."
+        ]
+      }
+    },
+    "morale": {
+      "helped": {
+        "small": [
+          "Good spirits added {value} points.",
+          "Morale gave a small {value}-point lift.",
+          "{athlete} led a confident group: +{value}.",
+          "Positive morale nudged the margin {value} points."
+        ],
+        "medium": [
+          "High morale was worth {value} points.",
+          "Confidence across the lineup added {value}.",
+          "{athlete} topped a confident lineup: +{value}.",
+          "Team spirit added {value} points."
+        ],
+        "large": [
+          "Sky-high morale drove {value} points.",
+          "A confident lineup gained {value} points.",
+          "Morale was a major boost: +{value}.",
+          "{athlete} led a lineup full of belief: +{value}."
+        ]
+      },
+      "hurt": {
+        "small": [
+          "Slightly low morale cost {value} points.",
+          "Morale dipped and cost {value}.",
+          "{athlete} had the lowest morale; team lost {value}.",
+          "A small morale drag: −{value}."
+        ],
+        "medium": [
+          "Low morale cost {value} points.",
+          "Sagging confidence took away {value} points.",
+          "Morale trouble, lowest for {athlete}, cost {value}.",
+          "A discouraged lineup gave up {value} points."
+        ],
+        "large": [
+          "Very low morale cost {value} points.",
+          "Morale was a heavy {value}-point drag.",
+          "{athlete} and the starters lacked belief: −{value}.",
+          "Poor morale wiped out {value} points."
+        ]
+      }
+    },
+    "preparation": {
+      "helped": {
+        "small": [
+          "A little preparation added {value} points.",
+          "Light practice work gave {value} points.",
+          "Prep earned a modest {value} points.",
+          "Some game planning added {value}."
+        ],
+        "medium": [
+          "Preparation paid off with {value} points.",
+          "Practice work added {value} points.",
+          "A solid game plan earned {value}.",
+          "Being ready was worth {value} points."
+        ],
+        "large": [
+          "Thorough preparation delivered {value} points.",
+          "Practice paid big: +{value}.",
+          "A sharp game plan added {value} points.",
+          "Preparation was a major edge: +{value}."
+        ]
+      },
+      "hurt": {
+        "small": [
+          "Thin preparation cost {value} points.",
+          "A shaky game plan lost {value}.",
+          "Missing practice work cost {value} points.",
+          "Prep fell short by {value} points."
+        ],
+        "medium": [
+          "Poor preparation cost {value} points.",
+          "An unready lineup lost {value} points.",
+          "Skipped practice work took away {value}.",
+          "The game plan came up {value} points short."
+        ],
+        "large": [
+          "No real preparation cost {value} points.",
+          "Unprepared starters gave up {value} points.",
+          "Preparation was a major drag: −{value}.",
+          "A missing game plan cost {value} points."
+        ]
+      }
+    },
+    "cohesion": {
+      "helped": {
+        "small": [
+          "Chemistry added a small {value} points.",
+          "Team cohesion nudged the margin {value}.",
+          "Players clicked for {value} extra points.",
+          "Good chemistry was worth {value}."
+        ],
+        "medium": [
+          "Strong chemistry added {value} points.",
+          "Cohesion turned into {value} points.",
+          "A connected lineup gained {value}.",
+          "Team chemistry paid off: +{value}."
+        ],
+        "large": [
+          "Excellent chemistry delivered {value} points.",
+          "Cohesion was a major edge: +{value}.",
+          "A tight-knit team gained {value} points.",
+          "Chemistry carried {value} points."
+        ]
+      },
+      "hurt": {
+        "small": [
+          "Chemistry dipped and cost {value} points.",
+          "Slight disconnects cost {value}.",
+          "Cohesion trimmed {value} points.",
+          "A small chemistry gap: −{value}."
+        ],
+        "medium": [
+          "Weak chemistry cost {value} points.",
+          "Poor cohesion took away {value}.",
+          "The lineup lacked chemistry: −{value}.",
+          "Disconnected play cost {value} points."
+        ],
+        "large": [
+          "Broken chemistry cost {value} points.",
+          "Cohesion problems drained {value}.",
+          "Low cohesion was a major drag: −{value}.",
+          "A fractured team gave up {value} points."
+        ]
+      }
+    },
+    "depth": {
+      "helped": {
+        "small": [
+          "A full bench added {value} points.",
+          "Depth gave a small {value}-point lift.",
+          "Extra bodies nudged the margin {value}.",
+          "Bench strength was worth {value}."
+        ],
+        "medium": [
+          "A deep roster added {value} points.",
+          "Bench depth paid off: +{value}.",
+          "Plenty of players earned {value} points.",
+          "Rotation depth was worth {value} points."
+        ],
+        "large": [
+          "Great depth delivered {value} points.",
+          "The bench was a major edge: +{value}.",
+          "Roster depth carried {value} points.",
+          "A full rotation added {value} points."
+        ]
+      },
+      "hurt": {
+        "small": [
+          "A thin bench cost {value} points.",
+          "Short depth trimmed {value} points.",
+          "Missing bodies cost {value}.",
+          "Depth was a small drag: −{value}."
+        ],
+        "medium": [
+          "A short bench cost {value} points.",
+          "With {athlete} out, depth cost {value}.",
+          "Too few available players: −{value}.",
+          "Limited depth took away {value} points."
+        ],
+        "large": [
+          "A very thin roster cost {value} points.",
+          "Missing players, including {athlete}, cost {value}.",
+          "Depth was a serious drag: −{value}.",
+          "Too few bodies cost {value} points."
+        ]
+      }
+    },
+    "luck": {
+      "helped": {
+        "small": [
+          "The bounces added {value} points.",
+          "Random variance tilted +{value}.",
+          "A small swing of chance: +{value}.",
+          "Game-to-game variance added {value}."
+        ],
+        "medium": [
+          "Random variance added {value} points.",
+          "Chance swung {value} points this way.",
+          "The breaks were worth {value} points.",
+          "Variance tipped the scale by {value}."
+        ],
+        "large": [
+          "A big random swing added {value} points.",
+          "Variance alone delivered {value} points.",
+          "Chance tilted this one by {value}.",
+          "The breaks swung {value} points this way."
+        ]
+      },
+      "hurt": {
+        "small": [
+          "The bounces took {value} points.",
+          "Random variance tilted −{value}.",
+          "A small swing of chance: −{value}.",
+          "Game-to-game variance cost {value}."
+        ],
+        "medium": [
+          "Random variance cost {value} points.",
+          "Chance swung {value} points the other way.",
+          "The breaks ran {value} points the other way.",
+          "Variance tipped the scale by −{value}."
+        ],
+        "large": [
+          "A big random swing cost {value} points.",
+          "Variance alone took {value} points.",
+          "Chance tilted this one by −{value}.",
+          "The breaks swung {value} points away."
+        ]
+      }
+    }
+  },
+  "close": [
+    "No factor moved the margin by a full point.",
+    "Every factor stayed under one point.",
+    "Tiny edges everywhere; nothing reached one point.",
+    "Small margins only: no factor hit one point."
+  ],
+  "headlines": {
+    "win": {
+      "blowout": [
+        "A runaway {margin}-point win over {opponent}.",
+        "{opponent} never got close: won by {margin_points}.",
+        "Dominant result: a {margin}-point margin.",
+        "Blowout win, {margin_points} clear of {opponent}."
+      ],
+      "comfortable": [
+        "A comfortable {margin}-point win over {opponent}.",
+        "Controlled win with {margin_points} to spare.",
+        "Beat {opponent} by a solid {margin}.",
+        "A steady win by {margin_points}."
+      ],
+      "narrow": [
+        "A narrow {margin}-point win over {opponent}.",
+        "Edged {opponent} by just {margin}.",
+        "Close call, but a {margin}-point win.",
+        "Won a tight one by {margin_points}."
+      ],
+      "overtime": [
+        "Survived {opponent} in overtime.",
+        "An overtime win by {margin_points}.",
+        "Needed overtime, but the win counts.",
+        "Extra period, same result: an overtime win."
+      ]
+    },
+    "loss": {
+      "blowout": [
+        "A {margin}-point loss to {opponent}.",
+        "{opponent} pulled away to win by {margin}.",
+        "A rough result: lost by {margin_points}.",
+        "Lopsided loss, {margin_points} behind {opponent}."
+      ],
+      "comfortable": [
+        "Lost to {opponent} by {margin_points}.",
+        "{opponent} controlled this one by {margin}.",
+        "A clear {margin}-point loss.",
+        "Outplayed by {margin_points} this week."
+      ],
+      "narrow": [
+        "A narrow {margin}-point loss to {opponent}.",
+        "Fell just short, by {margin_points}.",
+        "{opponent} edged it by {margin}.",
+        "So close: a {margin}-point loss."
+      ],
+      "overtime": [
+        "Lost to {opponent} in overtime.",
+        "An overtime loss by {margin_points}.",
+        "Went to overtime, then fell short.",
+        "The overtime period went to {opponent}."
+      ]
+    }
+  },
+  "tips": {
+    "at_risk_athlete": {
+      "category": "protect",
+      "priority": 1,
+      "action": "Recovery",
+      "cost": 2,
+      "phrasings": [
+        "{athlete} is at {fatigue} Fatigue. Use Recovery (2 tokens) before more training.",
+        "Protect {athlete}: {fatigue} Fatigue. Schedule Recovery (2 tokens) next week."
+      ]
+    },
+    "weak_fatigue": {
+      "category": "weakness",
+      "priority": 2,
+      "action": "Recovery",
+      "cost": 2,
+      "phrasings": [
+        "Your starters now average {fatigue} Fatigue. Recovery (2 tokens) lowers it for everyone.",
+        "Starter Fatigue sits at {fatigue}; book Recovery (2 tokens) next week."
+      ]
+    },
+    "weak_depth": {
+      "category": "weakness",
+      "priority": 2,
+      "action": "Recruit",
+      "cost": 5,
+      "phrasings": [
+        "Only {available_players} are available. Recruit (5 tokens) to deepen the bench.",
+        "With {available_players} healthy, depth is costing points. Recruit (5 tokens) adds a body."
+      ]
+    },
+    "weak_cohesion": {
+      "category": "weakness",
+      "priority": 3,
+      "action": "Team Culture",
+      "cost": 2,
+      "phrasings": [
+        "Cohesion is down to {cohesion}. Team Culture (2 tokens) is the fastest fix.",
+        "Chemistry reads {cohesion} Cohesion; Team Culture (2 tokens) raises it most."
+      ]
+    },
+    "weak_morale": {
+      "category": "weakness",
+      "priority": 3,
+      "action": "Team Culture",
+      "cost": 2,
+      "phrasings": [
+        "Average Morale is {morale}. Team Culture (2 tokens) lifts every athlete.",
+        "Morale averages {morale}; schedule Team Culture (2 tokens) to lift the roster."
+      ]
+    },
+    "talent_matchup": {
+      "category": "matchup",
+      "priority": 3,
+      "action": "Train Player",
+      "cost": 3,
+      "phrasings": [
+        "{opponent} out-rates your starters by {gap}. Train Player (3 tokens) narrows the gap.",
+        "Next up, {opponent} holds a {gap}-point ratings edge. Use Train Player (3 tokens)."
+      ]
+    },
+    "protect_streak": {
+      "category": "protect",
+      "priority": 4,
+      "action": "Recovery",
+      "cost": 2,
+      "phrasings": [
+        "Protect the {streak}-game win streak: Recovery (2 tokens) keeps starters fresh.",
+        "{streak_wins} in a row. Keep legs fresh with Recovery (2 tokens)."
+      ]
+    },
+    "need_wins": {
+      "category": "season",
+      "priority": 4,
+      "action": "Practice",
+      "cost": 3,
+      "phrasings": [
+        "You need {wins_needed_count} more {wins_word} to make the playoffs. Practice (3 tokens) builds Preparation.",
+        "Playoffs need {wins_needed_count} more {wins_word}. Lean on Practice (3 tokens) each week."
+      ]
+    },
+    "playoffs_next": {
+      "category": "season",
+      "priority": 4,
+      "action": "Practice",
+      "cost": 3,
+      "phrasings": [
+        "{round} next: {opponent}, rated {rating}. Practice (3 tokens) builds Preparation.",
+        "{opponent} awaits in the {round} at rating {rating}. Book Practice (3 tokens)."
+      ]
+    },
+    "weak_prep": {
+      "category": "weakness",
+      "priority": 5,
+      "action": "Practice",
+      "cost": 3,
+      "phrasings": [
+        "Preparation halved to {prep} after this game. Practice (3 tokens) rebuilds it.",
+        "Preparation is only {prep} now; Practice (3 tokens) restores it before the game."
+      ]
+    },
+    "spare_tokens": {
+      "category": "tokens",
+      "priority": 5,
+      "action": "Bank Tokens",
+      "cost": 0,
+      "phrasings": [
+        "You left {tokens_text} unspent. Next week, Bank Tokens (free) saves some.",
+        "{tokens_text} went unused this week. Bank Tokens (free) keeps some for later."
+      ]
+    },
+    "favorable_matchup": {
+      "category": "matchup",
+      "priority": 6,
+      "action": "Practice",
+      "cost": 3,
+      "phrasings": [
+        "Your starters out-rate {opponent} by {gap}. Practice (3 tokens) helps lock it in.",
+        "You hold a {gap}-point ratings edge over {opponent}; Practice (3 tokens) protects it."
+      ]
+    },
+    "praise": {
+      "category": "praise",
+      "priority": 6,
+      "action": "Practice",
+      "cost": 3,
+      "phrasings": [
+        "Won by {margin_points} with no big weakness. Keep Practice (3 tokens) in the plan.",
+        "A {margin}-point win without a major drag. Repeat Practice (3 tokens) next week."
+      ]
+    },
+    "fallback_next": {
+      "category": "fallback",
+      "priority": 9,
+      "action": "Practice",
+      "cost": 3,
+      "phrasings": [
+        "Preparation sits at {prep}. Practice (3 tokens) is a safe next step.",
+        "Next week, Practice (3 tokens) raises Preparation from {prep}."
+      ]
+    },
+    "fallback_final": {
+      "category": "fallback",
+      "priority": 9,
+      "action": null,
+      "cost": 0,
+      "phrasings": [
+        "Season complete after {games_text}. The report shows every result.",
+        "That was game {games} of the season. Review the full report next."
+      ]
+    }
+  }
+}

@@ -1,106 +1,54 @@
 """Explanation panel: factor ranking, sentences, coach tip, highlights."""
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
-from engine import loader, match
-from engine.models import GameResult, MatchFactors
+from engine import narration
+from engine.models import GameResult, SeasonState
+from engine.narration import Fits, Narrator, WhyLine
 
-
-@dataclass
-class ExplanationLine:
-    factor_id: str
-    signed_value: float
-    display_value: float
-    positive: bool
-    sentence: str
+ExplanationLine = WhyLine
 
 
 @dataclass
 class Explanation:
-    lines: list[ExplanationLine]
+    lines: list[WhyLine]
     coach_tip: str
     highlights: list[str]
+    headline: str = ""
+    tip_id: str = ""
+    tip_action: str | None = None
+    tip_cost: int = 0
+    pools: list[str] = field(default_factory=list)
 
 
-def _format_value(val: float) -> str:
-    return f"{abs(val):.1f}"
+def rank_factors(result: GameResult) -> list[tuple[str, float]]:
+    return narration.rank_factors(result)
 
 
-def _sentence_for_factor(
-    factor_id: str,
-    signed: float,
+def explain(
     result: GameResult,
-) -> str:
-    data = loader.load_explanations()["factors"][factor_id]
-    positive = signed >= 0
-    template = data["positive"] if positive else data["negative"]
-    display = abs(signed)
-    ctx = {
-        "value": _format_value(display),
-        "mean_r": f"{result.mean_r:.1f}",
-        "opp": str(result.opponent_rating),
-        "avg_fatigue": f"{result.avg_starter_fatigue:.1f}",
-        "prep": str(result.preparation),
-        "cohesion": str(result.cohesion),
-        "available": str(result.available_count),
-    }
-    return template.format(**ctx)
-
-
-def rank_factors(factors: MatchFactors) -> list[tuple[str, float]]:
-    items = list(factors.as_dict().items())
-    filtered = [(k, v) for k, v in items if abs(v) >= 1.0]
-    filtered.sort(key=lambda kv: abs(kv[1]), reverse=True)
-    return filtered[:3]
-
-
-def explain(result: GameResult) -> Explanation:
-    exp_data = loader.load_explanations()
-    ranked = rank_factors(result.factors)
-    lines: list[ExplanationLine] = []
-    if not ranked:
-        lines.append(
-            ExplanationLine(
-                factor_id="luck",
-                signed_value=result.factors.luck,
-                display_value=abs(result.factors.luck),
-                positive=result.factors.luck >= 0,
-                sentence=exp_data["close_game"],
-            )
-        )
-    else:
-        for factor_id, signed in ranked:
-            lines.append(
-                ExplanationLine(
-                    factor_id=factor_id,
-                    signed_value=signed,
-                    display_value=abs(signed),
-                    positive=signed >= 0,
-                    sentence=_sentence_for_factor(factor_id, signed, result),
-                )
-            )
-
-    coach_tip = _coach_tip(result.factors)
-    highlights = _highlights(result)
-    return Explanation(lines=lines, coach_tip=coach_tip, highlights=highlights)
-
-
-def _coach_tip(factors: MatchFactors) -> str:
-    tips = loader.load_explanations()["coach_tips"]
-    controllable = [
-        ("fatigue", factors.fatigue),
-        ("morale", factors.morale),
-        ("cohesion", factors.cohesion),
-        ("preparation", factors.preparation),
-        ("depth", factors.depth),
-        ("talent_gap", factors.talent_gap),
-    ]
-    negatives = [(k, v) for k, v in controllable if v < -0.5]
-    if not negatives:
-        return "Keep balancing training, practice, and recovery each week."
-    factor_id, _ = min(negatives, key=lambda kv: kv[1])
-    return tips.get(factor_id, tips["fatigue"])
+    state: SeasonState | None = None,
+    narrator: Narrator | None = None,
+    line_fits: Fits | None = None,
+    tip_fits: Fits | None = None,
+) -> Explanation:
+    """Build the post-game panel. Pass the same Narrator each game to avoid repeats."""
+    if narrator is None:
+        narrator = Narrator(seed=result.week * 1009 + result.team_score * 31 + result.opponent_score)
+    lines = narrator.why_lines(result, fits=line_fits)
+    headline = narrator.headline(result, fits=line_fits)
+    tip = narrator.coach_tip(result, state, fits=tip_fits)
+    return Explanation(
+        lines=lines,
+        coach_tip=tip.text,
+        highlights=_highlights(result),
+        headline=headline,
+        tip_id=tip.tip_id,
+        tip_action=tip.action,
+        tip_cost=tip.cost,
+        pools=[line.pool for line in lines],
+    )
 
 
 def _highlights(result: GameResult) -> list[str]:

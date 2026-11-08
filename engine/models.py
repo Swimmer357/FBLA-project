@@ -124,6 +124,8 @@ class GameResult:
     leading_scorer: str | None = None
     defensive_standout: str | None = None
     fatigue_flags: list[str] = field(default_factory=list)
+    overtime: bool = False
+    unavailable_names: list[str] = field(default_factory=list)
 
 
 @dataclass

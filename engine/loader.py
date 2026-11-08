@@ -231,6 +231,10 @@ def load_explanations() -> dict[str, Any]:
     return _read("explanations.json")
 
 
+def load_narration() -> dict[str, Any]:
+    return _read("narration.json")
+
+
 def load_howto() -> dict[str, Any]:
     return _read("howto.json")
 

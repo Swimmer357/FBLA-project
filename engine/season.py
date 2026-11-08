@@ -149,7 +149,8 @@ def play_game(state: SeasonState) -> GameResult:
         n_avail,
         luck,
     )
-    margin, _ot = match.resolve_margin(factors)
+    margin, overtime = match.resolve_margin(factors)
+    unavailable_names = [a.name for a in state.athletes if not a.available]
     team_score, opp_score = match.compute_scores(starters, margin)
     previous_pairs = {(game.team_score, game.opponent_score) for game in state.game_log}
     team_score, opp_score = match.unique_score_pair(team_score, opp_score, previous_pairs)
@@ -181,6 +182,8 @@ def play_game(state: SeasonState) -> GameResult:
         leading_scorer=ls,
         defensive_standout=ds,
         fatigue_flags=flags,
+        overtime=overtime,
+        unavailable_names=unavailable_names,
     )
 
     if won:

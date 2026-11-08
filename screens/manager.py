@@ -27,6 +27,11 @@ class GameApp:
         self.intro_complete = False
         self.hub_summary: dict | None = None
         self.state = None
+        from engine.narration import Narrator
+
+        self.narrator = Narrator()
+        self.match_speed = 1
+        self.quick_sim_state = None
         self._load_fonts()
         self._load_sounds()
         self.stack: list = []

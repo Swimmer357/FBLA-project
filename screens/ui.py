@@ -340,11 +340,21 @@ def draw_change_indicator(
     surf.blit(font.render(f"{sign}{abs(delta)}", True, color), (pos[0] + 12, pos[1] - 10))
 
 
+def court_rect() -> pygame.Rect:
+    return pygame.Rect(78, 112, theme.WINDOW_WIDTH - 156, 480)
+
+
+def hoop_positions() -> tuple[tuple[int, int], tuple[int, int]]:
+    """Rim centers as drawn by draw_court: (left hoop, right hoop)."""
+    court = court_rect()
+    return (court.x + 64, court.centery), (court.right - 64, court.centery)
+
+
 def draw_court(surf: pygame.Surface, alpha: int = 40) -> None:
     """Draw an original, scalable top-down basketball court."""
     draw_background(surf)
     layer = pygame.Surface(surf.get_size(), pygame.SRCALPHA)
-    court = pygame.Rect(78, 112, theme.WINDOW_WIDTH - 156, 480)
+    court = court_rect()
     wood = (191, 126, 62, max(80, min(255, alpha + 95)))
     line = (255, 241, 210, max(120, min(255, alpha + 150)))
     pygame.draw.rect(layer, wood, court)
@@ -404,9 +414,16 @@ def draw_scoreboard(
     away_score: int,
     font_big: pygame.font.Font,
     font_small: pygame.font.Font,
+    *,
+    flash_home: bool = False,
+    flash_away: bool = False,
 ) -> None:
     panel = pygame.Rect(300, 28, 680, 118)
     draw_panel(surf, panel, font=font_small)
+    for flash, x in ((flash_home, panel.x + 150), (flash_away, panel.right - 150)):
+        if flash:
+            pygame.draw.rect(surf, theme.HEADER_BG, pygame.Rect(x - 70, panel.y + 48, 140, 56))
+            pygame.draw.rect(surf, theme.TEXT_WHITE, pygame.Rect(x - 70, panel.y + 48, 140, 56), width=2)
     home_name = font_small.render(_fit_label(font_small, home.upper(), 215), True, theme.TEXT_WHITE)
     away_name = font_small.render(_fit_label(font_small, away.upper(), 215), True, theme.TEXT_WHITE)
     hs = font_big.render(str(home_score), True, theme.TITLE_CYAN)
