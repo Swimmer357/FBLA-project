@@ -349,33 +349,17 @@ class PlanningScreen(Screen):
 
         top = self._content_top()
         roster_rect = pygame.Rect(theme.MARGIN_X, top, theme.ROSTER_W, theme.FOOTER_Y - top - 48)
-        ui.draw_panel(surf, roster_rect, font=app.font_small, title="Roster", font_bold=app.font_bold)
-        header_y = roster_rect.y + 42
-        for label, x in (
-            ("PLAYER", roster_rect.x + 12),
-            ("SHO", roster_rect.x + 176),
-            ("DEF", roster_rect.x + 220),
-            ("STA", roster_rect.x + 264),
-            ("FAT", roster_rect.x + 306),
-        ):
-            surf.blit(app.font_small.render(label, True, theme.SECTION_YELLOW), (x, header_y))
-        y = roster_rect.y + 70
-        max_y = roster_rect.bottom - 24
-        for a in state.athletes:
-            if y > max_y:
-                break
-            cap = " ★" if a.roster_index == state.captain_index else ""
-            name = ui._fit_label(app.font_small, f"{a.name}{cap}", 154)
-            surf.blit(app.font_small.render(name, True, theme.TEXT_WHITE), (roster_rect.x + 12, y))
-            values = (a.shooting, a.defense, a.stamina, a.fatigue)
-            for value, x in zip(values, (176, 220, 264, 306)):
-                color = theme.BAD_RED if x == 306 and value >= 70 else theme.TEXT_DIM
-                surf.blit(app.font_small.render(str(value), True, color), (roster_rect.x + x, y))
-            y += 30
+        ui.draw_planning_roster_table(
+            surf,
+            roster_rect,
+            state.athletes,
+            captain_index=state.captain_index,
+            font=app.font_small,
+            font_bold=app.font_bold,
+        )
 
         font_btn = getattr(app, "font_button", app.font_small)
         if self.sub_mode == "recruit":
-            surf.blit(app.font_bold.render("RECRUITING", True, theme.SECTION_YELLOW), (self._action_area()[0], top - 4))
             for w in app.focus.widgets:
                 if "recruit" in w:
                     r = w["recruit"]
@@ -384,11 +368,9 @@ class PlanningScreen(Screen):
                 elif w["id"] == "decline":
                     ui.draw_quest_button(surf, w["rect"], "Decline", font_btn, focused=app.focus.current is w)
         elif self.sub_mode == "bank":
-            surf.blit(app.font_bold.render("BANK TOKENS", True, theme.SECTION_YELLOW), (self._action_area()[0], top + 24))
             for w in app.focus.widgets:
                 ui.draw_quest_button(surf, w["rect"], w["id"] + " token(s)", font_btn, focused=app.focus.current is w)
         elif self.sub_mode == "train_pick":
-            surf.blit(app.font_bold.render("FOCUSED TRAINING", True, theme.SECTION_YELLOW), (self._action_area()[0], top - 4))
             for w in app.focus.widgets:
                 if "athlete" in w:
                     athlete = w["athlete"]
@@ -397,7 +379,6 @@ class PlanningScreen(Screen):
                 else:
                     ui.draw_quest_button(surf, w["rect"], w["id"], font_btn, focused=app.focus.current is w)
         else:
-            surf.blit(app.font_bold.render("WEEKLY ACTIONS", True, theme.SECTION_YELLOW), (self._action_area()[0], top - 4))
             for w in app.focus.widgets:
                 if w["id"] == "start_game":
                     ui.draw_quest_button(

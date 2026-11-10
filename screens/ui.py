@@ -263,6 +263,75 @@ def draw_panel(
         surf.blit(label, (rect.x + 16, rect.y + 12))
 
 
+ROSTER_NAME_PAD = 12
+ROSTER_NAME_W = 168
+ROSTER_STAT_COL_W = 52
+ROSTER_STAT_HEADERS = ("SHO", "DEF", "STA", "FAT")
+
+
+def _captain_suffix(captain_index: int | None, athlete) -> str:
+    if captain_index is not None and athlete.roster_index == captain_index:
+        return " (C)"
+    return ""
+
+
+def _blit_in_column(
+    surf: pygame.Surface,
+    font: pygame.font.Font,
+    text: str,
+    color: tuple[int, int, int],
+    col_x: int,
+    col_w: int,
+    y: int,
+    *,
+    align: str = "left",
+) -> None:
+    rendered = font.render(text, True, color)
+    if align == "right":
+        x = col_x + col_w - rendered.get_width()
+    elif align == "center":
+        x = col_x + (col_w - rendered.get_width()) // 2
+    else:
+        x = col_x
+    surf.blit(rendered, (x, y))
+
+
+def draw_planning_roster_table(
+    surf: pygame.Surface,
+    rect: pygame.Rect,
+    athletes,
+    *,
+    captain_index: int | None,
+    font: pygame.font.Font,
+    font_bold: pygame.font.Font | None = None,
+    title: str = "Roster",
+) -> None:
+    """Name column + four right-aligned stat columns (all visible, no scroll)."""
+    draw_panel(surf, rect, font=font, title=title, font_bold=font_bold)
+    stats_x = rect.x + ROSTER_NAME_PAD + ROSTER_NAME_W + 8
+    header_y = rect.y + 42
+    _blit_in_column(
+        surf, font, "PLAYER", theme.SECTION_YELLOW, rect.x + ROSTER_NAME_PAD, ROSTER_NAME_W, header_y
+    )
+    for index, label in enumerate(ROSTER_STAT_HEADERS):
+        col_x = stats_x + index * ROSTER_STAT_COL_W
+        _blit_in_column(surf, font, label, theme.SECTION_YELLOW, col_x, ROSTER_STAT_COL_W, header_y, align="right")
+    y = rect.y + 70
+    for athlete in athletes:
+        if y > rect.bottom - 24:
+            break
+        suffix = _captain_suffix(captain_index, athlete)
+        name = _fit_label(font, f"{athlete.name}{suffix}", ROSTER_NAME_W - 4)
+        name_color = theme.TITLE_CYAN if suffix else theme.TEXT_WHITE
+        _blit_in_column(surf, font, name, name_color, rect.x + ROSTER_NAME_PAD, ROSTER_NAME_W, y)
+        values = (athlete.shooting, athlete.defense, athlete.stamina, athlete.fatigue)
+        for index, value in enumerate(values):
+            col_x = stats_x + index * ROSTER_STAT_COL_W
+            color = theme.BAD_RED if index == 3 and value >= 70 else theme.TEXT_DIM
+            _blit_in_column(surf, font, str(value), color, col_x, ROSTER_STAT_COL_W, y, align="right")
+        y += 30
+
+
 def draw_stat_badge(
     surf: pygame.Surface,
     rect: pygame.Rect,

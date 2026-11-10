@@ -73,7 +73,7 @@ BUTTON_H_FEATURED = sy(97)
 BUTTON_GAP = sx(25)
 COLS = 3
 FOCUS_RING = 2
-ROSTER_W = 340
+ROSTER_W = 420
 ROSTER_H = 400
 
 SOUND_CLICK = "assets/sounds/click.ogg"
